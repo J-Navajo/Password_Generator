@@ -1,3 +1,2 @@
 # Password_Generator
-
-I have an idea on what I want to do interface wise but don't know how I can implement it. I guess I don't fully understand the for loop and how to set it up.
+Create a Random Password Generator that asks the user what type of symbols and letters they would like in their password, using prompts. 
