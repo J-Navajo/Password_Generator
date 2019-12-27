@@ -1,0 +1,37 @@
+
+
+.header {
+    text-align: center;
+    padding: 20px 20px 10px 20px;
+    margin: 100px 100px 0px 100px;
+    
+    background-color: lightgrey;
+}
+
+.container{
+    text-align: left;
+    margin: auto;
+    padding: 10px 0px 10px 10px;
+    border: 1px red solid;
+    background-color: white;
+}
+
+h2 {
+    margin: 20px;
+    border-bottom: 12px black;
+}
+.passwordarea {
+    margin: 30px;
+    padding: 50px;
+    border: 1px gray dashed;
+}
+#generate {
+    padding: 15px;
+    position: relative;
+    margin: 20px;
+}
+
+#copy {
+    padding: 15px;
+    position: relative;
+}
