@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Password Generator</title>
-    <!-- <link rel="javascript" type="script" href="assets/script.js"> -->
+    
+    <link rel="stylesheet" href="assets/css.css">
+    <!-- <link rel="stylesheet" href="assets/script.js"> -->
 
 
 
@@ -17,7 +19,7 @@
     let uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     let lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     let symbols = ["!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "?", ".", "+"];
-    // <button onclick="many">Generate Password</button>
+    
 
     let many = function() {
         const number = parseInt(prompt("How many characters would you like in your password?"));
@@ -41,12 +43,24 @@ function choices() {
 
         let numbers = confirm("Click OK to include numbers.");
         console.log("Yes to Numbers", numbers);
+        if (numbers){
+            charSets.push(numbers);
+        }
+        console.log(charSets);
 
         let getlowercase = confirm("Click OK to include lowercase letters");
         console.log("Yes to lowercase letters", getlowercase);
+        if (getlowercase) {
+            charSets.push(getlowercase);
+        }
+        console.log(charSets);
 
         const getuppercase = confirm("Click OK to include UPPERCASE letters.");
         console.log("Yes to uppercase letters", getuppercase);
+        if (getuppercase) {
+            charSets.push(getuppercase);
+        }
+        console.log(charSets);
         Selectfrom(many, special, numbers, getlowercase, getuppercase);
     }
 }
@@ -67,21 +81,19 @@ function choices() {
 
 <body>
 
-    <h1>Password Generator</h1>
-    <div class="Container">
+    <div class = "header"><h1>Password Generator</h1>
+    <div class="container">
         <h2>Generate a Password</h2>
-        <div class=passwordarea>
-
-
-
+        <div class = "passwordarea">
 
         </div>
         <button id="generate" onclick="many()">Generate Password</button>
+        <button id="copy" onclick="many()">Copy to Clipboard</button>
 
 
 
     </div>
-    
+</div>
 </body>
 
 </html>
