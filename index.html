@@ -21,17 +21,12 @@
     let symbols = ["!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "?", ".", "+"];
     
 
-    let many = function() {
-        const number = parseInt(prompt("How many characters would you like in your password?"));
-        choices();
-    }
-    
-    
-
-function choices() {
-    console.log("Your input is " + many);
-    if (many < 8 || many > 130) {
+    let getpassword = function() {
+        var number = parseInt(prompt("How many characters would you like in your password?"));
+        // choices();
+        if (number < 8 || number > 130) {
         alert("Input must be higher than 7.")
+        getpassword();
     }
     else {
         let special = confirm("Click OK to include special characters.");
@@ -61,13 +56,22 @@ function choices() {
             charSets.push(getuppercase);
         }
         console.log(charSets);
-        Selectfrom(many, special, numbers, getlowercase, getuppercase);
+        Selectfrom(number, special, numbers, getlowercase, getuppercase);
     }
+    }
+    
+    
+
+function choices() {
+    // getpassword()
+    // console.log("Your input is " + number);
+    
+   
 }
-    function Selectfrom(many, special, numbers, lowercase, uppercase) {
+    function Selectfrom(number, special, numbers, lowercase, uppercase) {
         let generatePword = ""
 
-        for (const i = 0; i < many; i++) {
+        for (let i = 0; i < number; i++) {
             if (special) {
                 generatePword = generatePword + special
                 console.log(generatePword)
@@ -87,8 +91,8 @@ function choices() {
         <div class = "passwordarea">
 
         </div>
-        <button id="generate" onclick="many()">Generate Password</button>
-        <button id="copy" onclick="many()">Copy to Clipboard</button>
+        <button id="generate" onclick="getpassword()">Generate Password</button>
+        <!-- <button id="copy" onclick="getpassword()">Copy to Clipboard</button> -->
 
 
 
